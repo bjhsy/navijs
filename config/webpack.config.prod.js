@@ -9,8 +9,8 @@ config.plugins = config.plugins.concat([
     "process.env": {
       NODE_ENV: JSON.stringify("production")
     }
-  })
-  // new ClearWebpackPlugin(["build"], { root: path.resolve(__dirname, "../") })
+  }),
+  new ClearWebpackPlugin()
 ]);
 
 module.exports = merge(config, {

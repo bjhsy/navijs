@@ -25,8 +25,8 @@ export default class Navigation extends Component<{ body: Node[] }> {
 
   render() {
     return (
-      <Layout>
-        <Header className="header">
+      <Layout className="navi">
+        <Header>
           <Menu theme="dark" mode="horizontal">
             <Menu.Item key="1">nav 111</Menu.Item>
             <Menu.Item key="2">nav 2</Menu.Item>
@@ -34,13 +34,8 @@ export default class Navigation extends Component<{ body: Node[] }> {
           </Menu>
         </Header>
         <Layout>
-          <Sider>
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
-              style={{ height: "100%", borderRight: 0 }}
-            >
+          <Sider className="flex">
+            <Menu className="navi" mode="inline" defaultSelectedKeys={["1"]} defaultOpenKeys={["sub1"]}>
               <SubMenu
                 key="sub1"
                 title={

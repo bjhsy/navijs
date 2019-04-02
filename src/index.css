@@ -1,0 +1,13 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.flex {
+  overflow: auto;
+}
+
+.navi {
+  height: 100%;
+}

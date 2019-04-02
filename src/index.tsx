@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Navigation from "./Navigation";
-// import "antd/dist/antd.css";
+import "./index.css";
 
 const documentReady = (function() {
   //这个函数返回whenReady()函数
@@ -51,5 +51,7 @@ documentReady(function() {
   document.body.childNodes.forEach(node => {
     content.push(node);
   });
-  ReactDOM.render(<Navigation body={content} />, document.body.appendChild(document.createElement("div")));
+  const root = document.createElement("div");
+  root.className = "navi";
+  ReactDOM.render(<Navigation body={content} />, document.body.appendChild(root));
 });
