@@ -3,6 +3,9 @@ import Layout from "antd/lib/layout";
 import Menu from "antd/lib/menu";
 import Icon from "antd/lib/icon";
 import SubMenu from "antd/lib/menu/SubMenu";
+import HeaderDropdown from "./components/header/HeaderDropdown";
+import Account from "./components/header/Account";
+import RightContent from "./components/header/RightContent";
 
 const { Header, Sider, Content } = Layout;
 
@@ -32,10 +35,16 @@ export default class Navigation extends Component<{ body: Node[] }> {
             <Menu.Item key="2">nav 2</Menu.Item>
             <Menu.Item key="3">nav 3</Menu.Item>
           </Menu>
+          <RightContent />
         </Header>
         <Layout>
           <Sider className="flex">
-            <Menu className="navi" mode="inline" defaultSelectedKeys={["1"]} defaultOpenKeys={["sub1"]}>
+            <Menu
+              className="navi"
+              mode="inline"
+              defaultSelectedKeys={["1"]}
+              defaultOpenKeys={["sub1"]}
+            >
               <SubMenu
                 key="sub1"
                 title={
