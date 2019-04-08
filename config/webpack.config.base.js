@@ -2,14 +2,16 @@
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  entry: {
-    main: "./src/index.tsx"
+  entry: "./src/index.ts",
+  externals: {
+    antd: "antd"
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        use: "ts-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.js$/,
