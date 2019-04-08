@@ -2,10 +2,9 @@
   "name": "@fyl080801/navijs",
   "version": "1.0.0",
   "description": "",
-  "main": "build/main.js",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./config/webpack.config.dev.js",
-    "build": "webpack --config ./config/webpack.config.prod.js"
+    "build": "tsc"
   },
   "author": "fyl080801",
   "license": "ISC",
