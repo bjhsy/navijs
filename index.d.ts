@@ -5,6 +5,7 @@ import { Component } from 'react';
 declare module '@fyl080801/navijs';
 
 export function bootstrap(): void;
+
 export namespace layout {
   function Button(props: ButtonProps & { buttontype?: ButtonType }): JSX.Element;
   function HeaderForm(props: any): JSX.Element;
