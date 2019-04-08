@@ -3,9 +3,6 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
-  externals: {
-    antd: "antd"
-  },
   module: {
     rules: [
       {
