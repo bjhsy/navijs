@@ -1,5 +1,4 @@
 import bootstrap from './bootstrap';
+import * as layout from './components/layout';
 
-export default {
-  bootstrap
-};
+export { bootstrap, layout };
