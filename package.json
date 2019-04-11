@@ -2,7 +2,7 @@
   "name": "@fyl080801/navijs",
   "version": "1.0.0-1",
   "description": "",
-  "main": "lib/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
