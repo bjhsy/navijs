@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Navigation from './Navigation';
-// import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import Navigation from "./Navigation";
 
 const bootstrap = () => {
   const documentReady = (function() {
@@ -14,7 +13,10 @@ const bootstrap = () => {
       if (ready) return; //确保事件处理程序只完整运行一次
 
       //如果发生onreadystatechange事件，但其状态不是complete的话,那么文档尚未准备好
-      if (e.type === 'onreadystatechange' && document.readyState !== 'complete') {
+      if (
+        e.type === "onreadystatechange" &&
+        document.readyState !== "complete"
+      ) {
         return;
       }
 
@@ -30,12 +32,12 @@ const bootstrap = () => {
     }
     //为接收到的任何事件注册处理程序
     if (document.addEventListener) {
-      document.addEventListener('DOMContentLoaded', handler, false);
-      document.addEventListener('readystatechange', handler, false); //IE9+
-      window.addEventListener('load', handler, false);
+      document.addEventListener("DOMContentLoaded", handler, false);
+      document.addEventListener("readystatechange", handler, false); //IE9+
+      window.addEventListener("load", handler, false);
     } else if ((document as any).attachEvent) {
-      (document as any).attachEvent('onreadystatechange', handler);
-      (window as any).attachEvent('onload', handler);
+      (document as any).attachEvent("onreadystatechange", handler);
+      (window as any).attachEvent("onload", handler);
     }
     //返回函数
     return function(fn: Function) {
@@ -52,9 +54,12 @@ const bootstrap = () => {
     document.body.childNodes.forEach(node => {
       content.push(node);
     });
-    const root = document.createElement('div');
-    root.className = 'navi';
-    ReactDOM.render(<Navigation body={content} />, document.body.appendChild(root));
+    const root = document.createElement("div");
+    root.className = "navi";
+    ReactDOM.render(
+      <Navigation body={content} />,
+      document.body.appendChild(root)
+    );
   });
 };
 
