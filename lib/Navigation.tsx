@@ -31,7 +31,7 @@ export default class Navigation extends Component<{ body: Node[] }> {
       <Layout className="navi">
         <Header>
           <Menu theme="dark" mode="horizontal">
-            <Menu.Item key="1">nav 111</Menu.Item>
+            <Menu.Item key="1">nav 1</Menu.Item>
             <Menu.Item key="2">nav 2</Menu.Item>
             <Menu.Item key="3">nav 3</Menu.Item>
           </Menu>

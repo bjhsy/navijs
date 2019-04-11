@@ -54,7 +54,7 @@ var Navigation = /** @class */ (function (_super) {
         return (react_1.default.createElement(layout_1.default, { className: "navi" },
             react_1.default.createElement(Header, null,
                 react_1.default.createElement(menu_1.default, { theme: "dark", mode: "horizontal" },
-                    react_1.default.createElement(menu_1.default.Item, { key: "1" }, "nav 111"),
+                    react_1.default.createElement(menu_1.default.Item, { key: "1" }, "nav 1"),
                     react_1.default.createElement(menu_1.default.Item, { key: "2" }, "nav 2"),
                     react_1.default.createElement(menu_1.default.Item, { key: "3" }, "nav 3")),
                 react_1.default.createElement(RightContent_1.default, null)),
