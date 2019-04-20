@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
 var Navigation_1 = __importDefault(require("./Navigation"));
-var bootstrap = function () {
+var bootstrap = function (config) {
     var documentReady = (function () {
         //这个函数返回whenReady()函数
         var funcs = []; //当获得事件时，要运行的函数
