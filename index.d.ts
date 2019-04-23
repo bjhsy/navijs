@@ -4,7 +4,7 @@ import { Component } from "react";
 
 declare module "@fyl080801/navijs";
 
-export function bootstrap(config: any): void;
+export function bootstrap(config?: any): void;
 
 export namespace layout {
   function Button(

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Navigation from "./Navigation";
 
-const bootstrap = (config: any) => {
+const bootstrap = (config?: any) => {
   const documentReady = (function() {
     //这个函数返回whenReady()函数
     let funcs: Function[] = []; //当获得事件时，要运行的函数
