@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "antd/lib/layout";
 import Menu from "antd/lib/menu";
 import Icon from "antd/lib/icon";
@@ -10,7 +10,8 @@ import Site from "./site.json";
 
 const { Header, Sider, Content } = Layout;
 
-export default function(props: { body: Node[] }) {
+const Navigation = function(props: { body: Node[] }) {
+
   const contentBody = React.createRef<HTMLDivElement>();
 
   const [site, setSite] = useState<any>({ modules: [] });
@@ -44,6 +45,38 @@ export default function(props: { body: Node[] }) {
 
   const changeModule = (m: any) => {
     setCurrentModule(m);
+    if (m.defaultUrl && m.defaultUrl !== "" && m.defaultUrl !== location.href) {
+      location.href = m.defaultUrl;
+    }
+  };
+
+  const openUrl = (m: any) => {
+    if (m.url && m.url !== "" && m.url !== location.href) {
+      location.href = m.url;
+    }
+  };
+
+  const renderMenu = (menu: any) => {
+    return menu.map((m: any) => {
+      return m.menu ? (
+        <SubMenu
+          key={m.key}
+          title={
+            <span>
+              {m.icon && m.icon !== "" ? <Icon type={m.icon} /> : ""}
+              {m.title}
+            </span>
+          }
+        >
+          {renderMenu(m.menu)}
+        </SubMenu>
+      ) : (
+        <Menu.Item key={m.key} onClick={() => openUrl(m)}>
+          {m.icon && m.icon !== "" ? <Icon type={m.icon} /> : ""}
+          <span>{m.title}</span>
+        </Menu.Item>
+      );
+    });
   };
 
   return (
@@ -68,77 +101,7 @@ export default function(props: { body: Node[] }) {
             defaultSelectedKeys={["1"]}
             defaultOpenKeys={["sub1"]}
           >
-            {currentModule.menu.map((m: any) => {
-              return m.menu ? (
-                <SubMenu
-                  key={m.key}
-                  title={
-                    <span>
-                      {m.icon && m.icon !== "" ? <Icon type={m.icon} /> : ""}
-                      {m.title}
-                    </span>
-                  }
-                >
-                  {m.menu.map((sub: any) => (
-                    <Menu.Item key={sub.key}>
-                      {sub.icon && sub.icon !== "" ? (
-                        <Icon type={sub.icon} />
-                      ) : (
-                        ""
-                      )}
-                      <span>{sub.title}</span>
-                    </Menu.Item>
-                  ))}
-                </SubMenu>
-              ) : (
-                <Menu.Item key={m.key}>
-                  {m.icon && m.icon !== "" ? <Icon type={m.icon} /> : ""}
-                  <span>{m.title}</span>
-                </Menu.Item>
-              );
-            })}
-            {/* <SubMenu
-              key="sub1"
-              title={
-                <span>
-                  <Icon type="user" />
-                  subnav 1
-                </span>
-              }
-            >
-              <Menu.Item key="1">option1</Menu.Item>
-              <Menu.Item key="2">option2</Menu.Item>
-              <Menu.Item key="3">option3</Menu.Item>
-              <Menu.Item key="4">option4</Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                  <Icon type="laptop" />
-                  subnav 2
-                </span>
-              }
-            >
-              <Menu.Item key="5">option5</Menu.Item>
-              <Menu.Item key="6">option6</Menu.Item>
-              <Menu.Item key="7">option7</Menu.Item>
-              <Menu.Item key="8">option8</Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="sub3"
-              title={
-                <span>
-                  <Icon type="notification" />
-                  subnav 3
-                </span>
-              }
-            >
-              <Menu.Item key="9">option9</Menu.Item>
-              <Menu.Item key="10">option10</Menu.Item>
-              <Menu.Item key="11">option11</Menu.Item>
-              <Menu.Item key="12">option12</Menu.Item>
-            </SubMenu> */}
+            {renderMenu(currentModule.menu)}
           </Menu>
         </Sider>
         <Layout>
@@ -149,4 +112,6 @@ export default function(props: { body: Node[] }) {
       </Layout>
     </Layout>
   );
-}
+};
+
+export default Navigation;

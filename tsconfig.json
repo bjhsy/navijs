@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "baseUrl": ".",
     "lib": ["dom", "es2015"],
     "outDir": "./dist/",
@@ -8,7 +9,6 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es5",
     "jsx": "react",
     "resolveJsonModule": true
   },

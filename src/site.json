@@ -5,25 +5,25 @@
       "key": "zichanguanli",
       "title": "资产管理",
       "icon": "appstore",
-      "defaultPath": "/ledger/list",
+      "defaultUrl": "http://localhost:3000/#/ledger/list",
       "menu": [
         {
           "key": "zichantaizhang",
           "title": "资产台账",
           "icon": "",
-          "path": "/ledger/list"
+          "url": "#/ledger/list"
         },
         {
           "key": "zichanzhuce",
           "title": "资产注册",
           "icon": "",
-          "path": "/ledger/register"
+          "url": "#/ledger/register"
         },
         {
           "key": "leibieguanli",
           "title": "类别管理",
           "icon": "",
-          "path": "/classes/manage"
+          "url": "#/classes/manage"
         }
       ]
     },
@@ -31,13 +31,13 @@
       "key": "xunjianguanli",
       "title": "巡检管理",
       "icon": "appstore",
-      "defaultPath": "/ledger/list",
+      "defaultUrl": "#/ledger/list",
       "menu": [
         {
           "key": "banzuguanli",
           "title": "班组管理",
           "icon": "",
-          "path": "/ledger/list"
+          "url": "#/ledger/list"
         }
       ]
     }
