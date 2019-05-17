@@ -3,6 +3,7 @@ import { ButtonProps, ButtonType } from "antd/lib/button";
 import { Component } from "react";
 
 declare module "@fyl080801/navijs";
+declare module ".json";
 
 export function bootstrap(config?: any): void;
 
