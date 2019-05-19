@@ -2,12 +2,11 @@
   "name": "@fyl080801/navijs",
   "version": "1.0.0-3",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "example": "cd example && npm start",
-    "install:example": "cd example && npm install",
-    "postinstall": "npm-run-all install:*"
+    "postinstall": "npm run build"
   },
   "author": "fyl080801",
   "license": "ISC",
@@ -16,23 +15,14 @@
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "antd": "^3.18.1",
-    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0"
-  },
-  "devDependencies": {
-    "husky": "^2.3.0",
+    "react-router-dom": "^5.0.0",
     "typescript": "^3.4.5"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
   },
   "browserslist": [
     ">0.2%",
