@@ -6,17 +6,25 @@ import SubMenu from "antd/lib/menu/SubMenu";
 import HeaderDropdown from "./components/header/HeaderDropdown";
 import Account from "./components/header/Account";
 import RightContent from "./components/header/RightContent";
-import Site from "./site.json";
 
 const { Header, Sider, Content } = Layout;
 
-const Navigation = function(props: { body: Node[] }) {
-
+const Navigation = function(props: { body: Node[]; site?: any }) {
   const contentBody = React.createRef<HTMLDivElement>();
 
   const [site, setSite] = useState<any>({ modules: [] });
 
   const [currentModule, setCurrentModule] = useState<any>({ menu: [] });
+
+  const setDefaultModule = (site: any) => {
+    if (typeof site.defaultModule === "number") {
+      setCurrentModule(site.modules[site.defaultModule]);
+    } else if (typeof site.defaultModule === "string") {
+      setCurrentModule(
+        site.modules.find((m: any) => m.key === site.defaultModule)
+      );
+    }
+  };
 
   // toggle = () => {
   //   this.setState({
@@ -29,18 +37,15 @@ const Navigation = function(props: { body: Node[] }) {
       contentBody.current.appendChild(node);
     });
 
-    new Promise(resolve => {
-      resolve(Site);
-    }).then((result: any) => {
-      setSite(result);
-      if (typeof result.defaultModule === "number") {
-        setCurrentModule(result.modules[result.defaultModule]);
-      } else if (typeof result.defaultModule === "string") {
-        setCurrentModule(
-          result.modules.find((m: any) => m.key === result.defaultModule)
-        );
-      }
-    });
+    if (props.site.__proto__ === Promise.prototype) {
+      props.site.then((result: any) => {
+        setSite(result);
+        setDefaultModule(result);
+      });
+    } else {
+      setSite(props.site);
+      setDefaultModule(props.site);
+    }
   }, []);
 
   const changeModule = (m: any) => {

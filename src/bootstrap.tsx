@@ -57,7 +57,7 @@ const bootstrap = (config?: any) => {
     const root = document.createElement("div");
     root.className = "navi";
     ReactDOM.render(
-      <Navigation body={content} />,
+      <Navigation body={content} site={config.site} />,
       document.body.appendChild(root)
     );
   });
