@@ -9,7 +9,8 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "jsx": "react",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": ["@types"]
   },
   "include": ["./src"],
   "exclude": ["./example"]
