@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "example": "cd example && npm start",
-    "postinstall": "npm run build"
+    "postinstall": "tsc --project ./tsconfig.json"
   },
   "author": "fyl080801",
   "license": "ISC",
