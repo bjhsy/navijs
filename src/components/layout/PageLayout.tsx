@@ -1,7 +1,7 @@
-import React from "react";
-import { Layout, PageHeader } from "antd";
+import React from 'react'
+import { Layout, PageHeader } from 'antd'
 
-const { Content } = Layout;
+const { Content } = Layout
 
 export default function(props: any) {
   return (
@@ -15,5 +15,5 @@ export default function(props: any) {
       />
       <Content style={{ padding: 16 }}>{props.children}</Content>
     </Layout>
-  );
+  )
 }

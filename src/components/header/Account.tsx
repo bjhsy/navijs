@@ -1,5 +1,5 @@
-import React from "react";
-import { Avatar } from "antd";
+import React from 'react'
+import { Avatar } from 'antd'
 
 export default function() {
   return (
@@ -7,5 +7,5 @@ export default function() {
       <Avatar size="small" alt="avatar" />
       <span>username</span>
     </span>
-  );
+  )
 }

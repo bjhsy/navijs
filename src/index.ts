@@ -1,4 +1,4 @@
-import bootstrap from "./bootstrap";
-import * as layout from "./components/layout";
+import bootstrap from './bootstrap'
+import * as layout from './components/layout'
 
-export { bootstrap, layout };
+export { bootstrap, layout }
