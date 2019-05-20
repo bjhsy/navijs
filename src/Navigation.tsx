@@ -34,7 +34,7 @@ const Navigation = function(props: { body: Node[]; site?: any }) {
 
   useEffect(() => {
     props.body.forEach(node => {
-      contentBody.current.appendChild(node)
+      if (contentBody.current) contentBody.current.appendChild(node)
     })
 
     if (props.site.__proto__ === Promise.prototype) {
