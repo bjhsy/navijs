@@ -11,9 +11,9 @@
     "jsx": "react",
     "resolveJsonModule": true,
     "typeRoots": ["@types"]
-  },
-  "include": ["./src/**/*"],
-  "exclude": ["../../**/*"]
+  }
+  // "include": ["./src/**/*"],
+  // "exclude": ["../../**/*"]
   // "exclude": [
   //   "./example",
   //   "node_modules",
