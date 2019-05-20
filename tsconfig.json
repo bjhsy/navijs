@@ -12,13 +12,13 @@
     "resolveJsonModule": true,
     "typeRoots": ["@types"]
   },
-  "include": ["./src"],
-  "exclude": [
-    "./example",
-    "node_modules",
-    "**/*.spec.ts",
-    "build",
-    "dist",
-    "../../**/*"
-  ]
+  "include": ["./src/**/*"]
+  // "exclude": [
+  //   "./example",
+  //   "node_modules",
+  //   "**/*.spec.ts",
+  //   "build",
+  //   "dist",
+  //   "../../**/*"
+  // ]
 }
