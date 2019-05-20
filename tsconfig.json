@@ -12,7 +12,8 @@
     "resolveJsonModule": true,
     "typeRoots": ["@types"]
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": ["../../**/*"]
   // "exclude": [
   //   "./example",
   //   "node_modules",
