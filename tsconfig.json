@@ -1,22 +1,5 @@
 {
   "compilerOptions": {
-    // "outDir": "./dist",
-    // "sourceMap": true,
-    // "noImplicitAny": true,
-    // "target": "es5",
-    // "lib": ["dom", "esnext"],
-    // "allowJs": true,
-    // "skipLibCheck": true,
-    // "esModuleInterop": true,
-    // "allowSyntheticDefaultImports": true,
-    // "strict": true,
-    // "forceConsistentCasingInFileNames": true,
-    // "module": "esnext",
-    // "moduleResolution": "node",
-    // "resolveJsonModule": true,
-    // "isolatedModules": true,
-    // "noEmit": true,
-    // "jsx": "preserve"
     "target": "es5",
     "lib": ["dom", "esnext"],
     "skipLibCheck": true,
@@ -27,7 +10,7 @@
     "noImplicitAny": true,
     "module": "esnext",
     "jsx": "react",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
   "include": ["./src"],
   "exclude": ["./example", "./dist", "node_modules"]
